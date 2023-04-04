@@ -1,33 +1,40 @@
+
+// const http = require('http');
+
+// const server = http.createServer((req, res) => {
+//   res.writeHead(200, {'Content-Type': 'text/plain'});
+//   function addNumbers(num1, num2, callback) {
+//     // Perform the addition operation
+//     let sum = num1 + num2;
+    
+//     // Call the callback function with the sum as an argument
+//     callback(sum);
+//   }
+  
+//   // Call the addNumbers function with two numbers and a callback function
+//   addNumbers(10, 20, function(result) {
+//  res.write("The result is: " + result);
+//   });
+//   res.end();
+// });
+
+// server.listen(3000, () => {
+//   console.log('Server running on port 3000');
+// });
+
+// function callbackFunction() {
+//   console.log('Callback function called!');
+// }
+
+// server.on('request', callbackFunction);
+
 const express = require('express');
-const request = require('request');
+const bodyParser = require('body-parser');
 
 const app = express();
+app.use(bodyParser.json());
 
-app.get('/', (req, res) => {
-  res.send('Welcome to the weather app!');
+app.listen(3000, () => {
+  console.log('Server started on port 3000');
 });
 
-app.get('/weather', (req, res) => {
-  const apiKey = 'dd9522d61f9dc21ce3dd22998e160311';
-  const city = 'Sirsi';
-  const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-
-  request(url, (error, response, body) => {
-    if (error) {
-      res.send('An error occurred while fetching the weather data.');
-    } else {
-      const data = JSON.parse(body);
-      const weatherData = {
-        temperature: data.main.temp,
-        description: data.weather[0].description,
-        // icon: `http://openweathermap.org/img/w/${data.weather[0].icon}.png`
-      };
-      res.json(weatherData);
-    }
-  });
-});
-
-const port = 5000;
-app.listen(port, () => {
-  console.log(`Server is listening on port ${port}`);
-});
