@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tribute Page</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			text-align: center;
+		}
+		h1 {
+			margin-top: 50px;
+			font-size: 36px;
+		}
+		p {
+			font-size: 18px;
+			margin: 20px 0;
+		}
+		img {
+			max-width: 100%;
+			height: auto;
+			margin-top: 50px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Tribute to Albert Einstein</h1>
+	<img src="https://upload.wikimedia.org/wikipedia/commons/5/50/Albert_Einstein_%28Nobel%29.png" alt="Albert Einstein">
+	<p>Albert Einstein was a German-born theoretical physicist who developed the theory of relativity, one of the two pillars of modern physics. His work is also known for its influence on the philosophy of science.</p>
+	<p>Born in Ulm, in the Kingdom of Württemberg in the German Empire, Einstein's family moved to Munich when he was an infant. In 1894, his father's company failed, and the family moved to Italy, leaving Einstein to finish school in Munich. He later renounced his German citizenship and became a Swiss citizen. After graduating, he worked as a patent clerk in Bern, Switzerland, and in 1905, he obtained his doctorate from the University of Zurich.</p>
+	<p>Throughout his life, Einstein was a pacifist and a supporter of civil rights, and he spoke out against racism and segregation. He was awarded the Nobel Prize in Physics in 1921 for his work on theoretical physics.</p>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parallax Website</title>
+    <style>
+      /* Set the background image for the whole page */
+      body {
+        background-image: url('background.jpg');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+      }
+
+      /* Set the styles for the header */
+      header {
+        background-color: #333;
+        color: #fff;
+        padding: 30px;
+        text-align: center;
+      }
+
+      /* Set the styles for the parallax section */
+      .parallax {
+        background-image: url('parallax.jpg');
+        background-size: cover;
+        background-position: center;
+        height: 400px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* Set the styles for the parallax content */
+      .parallax-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        text-align: center;
+      }
+
+      /* Set the styles for the regular sections */
+      section {
+        background-color: #fff;
+        color: #333;
+        padding: 50px 0;
+        text-align: center;
+      }
+
+      /* Set the styles for the footer */
+      footer {
+        background-color: #333;
+        color: #fff;
+        padding: 30px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Parallax Website</h1>
+      <p>Scroll down to see the parallax effect</p>
+    </header>
+
+    <section>
+      <h2>Section 1</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </section>
+
+    <section class="parallax">
+      <div class="parallax-content">
+        <h2>Parallax Section</h2>
+        <p>This section uses the parallax effect.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Section 2</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </section>
+
+    <footer>
+      <p>Copyright &copy; Parallax Website 2023
+    </footer>
+
+    <script>
+      // Set the parallax effect
+      window.addEventListener('scroll', function() {
+        const parallax = document.querySelector('.parallax');
+        let scrollPosition = window.pageYOffset;
+        parallax.style.transform = 'translateY(' + scrollPosition * 0.5 + 'px)';
+      });
+    </script>
+  </body>
+</html>
