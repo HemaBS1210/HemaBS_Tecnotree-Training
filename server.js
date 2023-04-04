@@ -1,34 +1,33 @@
 const express = require('express');
-const mysql = require('mysql2');
-const cors = require('cors');
+const request = require('request');
 
 const app = express();
-const port = process.env.PORT || 5000;
 
-const connection = mysql.createConnection({
-  host: '127.0.0.1',
-  user: 'root',
-  password: 'Root',
-  database: 'library'
+app.get('/', (req, res) => {
+  res.send('Welcome to the weather app!');
 });
 
-connection.connect((err) => {
-  if (err) throw err;
-  console.log('Connected to MySQL database!');
+app.get('/weather', (req, res) => {
+  const apiKey = 'dd9522d61f9dc21ce3dd22998e160311';
+  const city = 'Sirsi';
+  const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+  request(url, (error, response, body) => {
+    if (error) {
+      res.send('An error occurred while fetching the weather data.');
+    } else {
+      const data = JSON.parse(body);
+      const weatherData = {
+        temperature: data.main.temp,
+        description: data.weather[0].description,
+        // icon: `http://openweathermap.org/img/w/${data.weather[0].icon}.png`
+      };
+      res.json(weatherData);
+    }
+  });
 });
 
-app.use(express.json());
-app.use(cors());
-
-app.get('/books', (req, res) => {
-    connection.query('SELECT * FROM books', (err, results) => {
-      if (err) throw err;
-      res.send(results);
-    });
-  });
-  
-  app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
-  });
-
-  
+const port = 5000;
+app.listen(port, () => {
+  console.log(`Server is listening on port ${port}`);
+});
