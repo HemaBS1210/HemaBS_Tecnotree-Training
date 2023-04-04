@@ -1,0 +1,32 @@
+<!-- When the form is submitted, prevent the default form
+submission behavior and display an alert with the values of the
+name and email input fields. -->
+
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>Registration Form</h1>
+    <form id="myForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br><br>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"><br><br>
+        
+        <button type="submit">Submit</button>
+    </form>
+    
+    <script>
+        const myForm = document.getElementById("myForm");
+        
+        myForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+            const nameInput = document.getElementById("name");
+            const emailInput = document.getElementById("email");
+            const name = nameInput.value;
+            const email = emailInput.value;
+            alert("Name: " + name + "\nEmail: " + email);
+        });
+    </script>
+</body>
+</html>

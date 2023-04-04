@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Merge Sort Algorithm</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      li {
+        display: inline-block;
+        margin-right: 5px;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Merge Sort Algorithm</h1>
+
+    <p>Original array:</p>
+    <ul id="original"></ul>
+
+    <p>Sorted array:</p>
+    <ul id="sorted"></ul>
+
+    <script>
+      const originalArray = [5, 3, 8, 4, 2, 7, 1, 6];
+
+      const originalElement = document.getElementById("original");
+      for (let number of originalArray) {
+        const li = document.createElement("li");
+        li.textContent = number;
+        originalElement.appendChild(li);
+      }
+
+      function merge(left, right) {
+        const result = [];
+
+        while (left.length && right.length) {
+          if (left[0] <= right[0]) {
+            result.push(left.shift());
+          } else {
+            result.push(right.shift());
+          }
+        }
+
+        while (left.length) {
+          result.push(left.shift());
+        }
+
+        while (right.length) {
+          result.push(right.shift());
+        }
+
+        return result;
+      }
+
+      function mergeSort(array) {
+        if (array.length <= 1) {
+          return array;
+        }
+
+        const middle = Math.floor(array.length / 2);
+        const left = array.slice(0, middle);
+        const right = array.slice(middle);
+
+        return merge(mergeSort(left), mergeSort(right));
+      }
+
+      const sortedArray = mergeSort(originalArray);
+
+      const sortedElement = document.getElementById("sorted");
+      for (let number of sortedArray) {
+        const li = document.createElement("li");
+        li.textContent = number;
+        sortedElement.appendChild(li);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<!-- 5. Use JavaScript to add an event listener to the new button. -->
+
+<!DOCTYPE html>
+<html>
+<body>
+    <button id="myButton">Click me!</button>
+    <p id="myText">This is a paragraph.</p>
+    <button id="myButton2">Click me too!</button>
+    
+    <script>
+        const myButton = document.getElementById("myButton");
+        const myButton2 = document.getElementById("myButton2");
+        const myText = document.getElementById("myText");
+
+        myButton.addEventListener("click", function() {
+            myText.innerHTML = "The first button was clicked!";
+        });
+
+        myButton2.addEventListener("click", function() {
+            myText.innerHTML = "The second button was clicked!";
+            alert("Button was clicked!");
+        });
+        
+       
+            
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!-- 3. When the button is clicked, change the text of the paragraph to
+"The button was clicked!". -->
+<!DOCTYPE html>
+<html>
+<body>
+    <button id="myButton">Click me!</button>
+    <p id="myText">This is a paragraph.</p>
+    
+<script>
+ const myButton = document.getElementById("myButton");
+const myText = document.getElementById("myText");
+
+myButton.addEventListener("click", function() {
+  myText.innerHTML = "done";
+});
+
+</script>
+</body>
+</html>

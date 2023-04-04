@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Sum of Array of Numbers</title>
+  </head>
+
+  <style>
+     
+      h1 {
+        font-size: 24px;
+        color: #333;
+        text-align: center;
+      }
+      
+      
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      
+      li {
+        font-size: 16px;
+        color: #666;
+        margin: 5px 0;
+      }
+      
+      #sum {
+        font-size: 20px;
+        color: #e6141498;
+        text-align: center;
+        margin-top: 20px;
+        border: solid rgb(0, 0, 0);
+       /* text-decoration-color: aqua */
+       margin: auto;
+       width: 40%;
+       background-color:white;
+
+    ;
+      }
+      body{
+       background-repeat:no-repeat;
+       background-position: center;
+       background-size: cover;
+        background-image:url(https://i.stack.imgur.com/miwTk.gif);
+      }
+  
+  </style>
+  <body>
+    <h1>Sum of Array of Numbers</h1>
+
+    <p>Array of numbers:</p>
+    <ul id="array"></ul>
+
+    <p>Sum:</p>
+    <p id="sum"></p>
+
+    <script>
+      const numbers = [1, 2, 3, 4, 5,6,9];
+
+      const arrayElement = document.getElementById("array");
+      for (let number of numbers) {
+        const li = document.createElement("li");
+        li.textContent = number;
+        arrayElement.appendChild(li);
+      }
+
+      const sum = numbers.reduce((total, number) => total + number, 0);
+      const sumElement = document.getElementById("sum");
+      sumElement.textContent = sum;
+    </script>
+  </body>
+</html>

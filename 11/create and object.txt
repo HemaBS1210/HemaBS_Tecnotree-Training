@@ -1,0 +1,25 @@
+
+<head>
+    <title>My JavaScript Program</title>
+</head>
+
+<body>
+    <h1>Array and print</h1>
+    <script>
+        Create an object and access its properties using dot notation uisng javaScript
+let person = {
+  name: "John",
+  age: 30,
+  city: "New York"
+};
+
+console.log(person.name);   // Output: "John"
+console.log(person.age);    // Output: 30
+console.log(person.city);   // Output: "New York"
+<!DOCTYPE html>
+<html>
+
+    </script>
+</body>
+
+</html>

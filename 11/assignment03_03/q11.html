@@ -1,0 +1,25 @@
+<!-- 1. Use JavaScript to add an event listener to the list.
+ -->
+
+ <!DOCTYPE html>
+<html>
+<body>
+    <h1>My List</h1>
+    <ul id="myList">
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>Pine Apple</li>
+    </ul>
+    
+    <script>
+        const myList = document.getElementById("myList");
+        
+        myList.addEventListener("click", function(event) {
+            const target = event.target;
+            if (target.tagName === "LI") {
+                alert(target.innerText);
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!-- 5. Write a JavaScript program to rotate the string ‘Koding && Learning' in
+the right direction by periodically removing one letter from the end of the
+string and attaching it to the front. -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>My JavaScript Program</title>
+</head>
+
+<body>
+  <h1>reverseing a rotateString</h1>
+  <script>
+    // define the string to rotate
+    let str = 'Koding && Learning';
+
+    // define a function to rotate the string
+    function rotateString() {
+      // remove the last character from the string
+      let lastChar = str.charAt(str.length - 1);
+      str = lastChar + str.slice(0, str.length - 1);
+      // log the rotated string to the console
+      console.log(str);
+    }
+
+    // rotate the string every 1 second
+    setInterval(rotateString, 1000);
+  </script>
+</body>
+
+</html>

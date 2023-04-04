@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+      
+  <meta charset="UTF-8">
+  <title>Personal Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Personal Portfolio</h1>
+    
+    <nav>
+        
+      <ul>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#resume">Resume</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    
+  </header>
+ 
+  <main>
+    <section id="about">
+      <h2>About Me</h2>
+      <section id="about">
+        <div id="about-container">
+        <img src=" WhatsApp Image 2023-03-03 at 3.06.19 PM.jpeg" alt="Hema B S"width="100" height="100">
+        <p>I am from GSSSIETW.</p>
+    </div>
+      </section>
+    <section id="projects">
+      <h2>Projects</h2>
+      <div id="projects-container"></div>
+    </section>
+    <section id="skills">
+      <h2>Skills</h2>
+      <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>Node.js</li>
+        <li>React</li>
+      </ul>
+    </section>
+    <section id="resume">
+      <h2>Resume</h2>
+      <a href="resume.pdf" download>Download Resume</a>
+    </section>
+    <section id="contact">
+      <h2>Contact</h2>
+      <form id="contact-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2023 Personal Portfolio</p>
+  </footer>
+  <style>
+
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+}
+
+h1, h2, h3 {
+  margin: 0;
+}
+about-container {
+  display: flex;
+  align-items: left;
+  justify-content: left;
+}
+
+about-container img {
+  max-width: 100%;
+  height: auto;
+  margin-right: 1em;
+}
+
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+main {
+  padding: 20px;
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+form label, form textarea {
+  display: block;
+  margin-bottom: 10px;
+}
+
+form input, form textarea {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 20px
+
+  </style>
+  <script src="app.js"></script>
+</body>
+</html>

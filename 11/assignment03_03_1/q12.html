@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Charity Website</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navigation bar -->
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About Us</a></li>
+      <li><a href="#">Donate</a></li>
+      <li><a href="#">Contact Us</a></li>
+    </ul>
+  </nav>
+  
+  <!-- Banner section -->
+  <section id="banner">
+    <h1>Help Make a Difference</h1>
+    <p>Our non-profit organization is dedicated to improving the lives of people in need. Donate today to support our mission.</p>
+    <a href="#" class="button">Donate Now</a>
+  </section>
+  
+  <!-- Causes section -->
+  <section id="causes">
+    <h2>Our Causes</h2>
+    <ul>
+      <li>
+        <img src="https://media.istockphoto.com/id/1333303020/photo/female-asian-painter-creating-art-in-her-home-studio.jpg?b=1&s=170667a&w=0&k=20&c=TJBvX9OYrqDtoO-n3lX-fsFRcFXjhUOYa8fuUhcrLHk=" alt="Cause 1">
+        <h3>Feature local artists and performers</h3>
+        <p>A non-profit organization can feature local artists and performers on their website, promoting their work and providing information on upcoming events.</p>
+      </li>
+      <li>
+        <img src="https://burst.shopifycdn.com/photos/wrtiting-tools.jpg?width=1200&format=pjpg&exif=1&iptc=1" alt="Cause 2">
+        <h3>Provide resources for arts education</h3>
+        <p>A non-profit organization can provide resources and information on arts education, promoting the importance of preserving art and culture and encouraging future generations to continue the tradition.</p>
+      </li>
+      <li>
+        <img src="https://miro.medium.com/v2/resize:fit:1400/1*7EJG84HzQDAMhe6FU-dfnA.jpeg" alt="Cause 3">
+        <h3>Host events and workshops:</h3>
+        <p>A non-profit organization can host events and workshops related to arts and culture preservation, providing an opportunity for the community to come together and learn about different art forms.</p>
+      </li>
+    </ul>
+  </section>
+  
+  <!-- Newsletter section -->
+  <section id="newsletter">
+    <h2>Join Our Newsletter</h2>
+    <p>Sign up to receive updates on our latest projects and initiatives.</p>
+    <form>
+      <input type="email" placeholder="Enter your email address">
+      <button type="submit">Subscribe</button>
+    </form>
+  </section>
+  
+  <!-- Footer section -->
+  <footer>
+    <p>&copy; 2023 Charity Website</p>
+  </footer>
+  
+  <!-- JavaScript code -->
+  <script src="script.js"></script>
+</body>
+<style>
+    /* Global styles */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #0077CC;
+  text-decoration: none;
+}
+
+/* Navigation bar */
+
+nav {
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Banner section */
+
+#banner {
+  background-color: #f2f2f2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  text-align: center;
+}
+
+#banner h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+#banner p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+#banner .button {
+  background-color: #0077CC;
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  text-transform: uppercase;
+}
+
+/* Causes section */
+
+#causes {
+  background-color: #fff;
+  padding: 50px;
+  text-align: center;
+}
+
+#causes h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+#causes ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#causes li {
+  margin: 20px;
+  max-width: 300px;
+}
+
+#causes img {
+  width: 100%;
+}
+
+#causes h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+#causes p {
+  font-size: 1.2rem;
+}
+
+/* Newsletter section */
+
+#newsletter {
+  background-color: #f2f2f2;
+  padding: 50px;
+  text-align: center;
+}
+
+#newsletter h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+#newsletter p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+#newsletter input[type="email"] {
+  border: none;
+  font-size: 1.2rem;
+  padding: 10px;
+  width: 300px;
+}
+
+#newsletter button[type="submit"] {
+  background-color: #0077CC;
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  text-transform: uppercase;
+}
+
+/* Footer section */
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+}
+
+</style>
+
+<script>
+    /* Donation form validation */
+
+const form = document.querySelector('#donation-form');
+
+form.addEventListener('submit', function(event) {
+  const amount = document.querySelector('#amount').value;
+  
+  if (amount === '') {
+    alert('Please enter a donation amount.');
+    event.preventDefault();
+  } else if (isNaN(amount)) {
+    alert('Please enter a valid donation amount.');
+    event.preventDefault();
+  }
+});
+
+/* Carousel */
+
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  const slides = document.getElementsByClassName('slide');
+  const dots = document.getElementsByClassName('dot');
+  
+  if (n > slides.length) {
+    slideIndex = 1;
+  }
+  
+  if (n < 1) {
+    slideIndex = slides.length;
+  }
+  
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = 'none';
+  }
+  
+  for (let i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(' active', '');
+  }
+  
+  slides[slideIndex - 1].style.display = 'block';
+  dots[slideIndex - 1].className += ' active';
+}
+
+/* Mobile menu */
+
+const menuButton = document.querySelector('#menu-button');
+const menu = document.querySelector('#menu');
+
+menuButton.addEventListener('click', function() {
+  if (menu.style.display === 'block') {
+    menu.style.display = 'none';
+  } else {
+    menu.style.display = 'block';
+  }
+});
+
+/* Newsletter signup */
+
+const newsletterForm = document.querySelector('#newsletter-form');
+
+newsletterForm.addEventListener('submit', function(event) {
+  const email = document.querySelector('#email').value;
+  
+  if (email === '') {
+    alert('Please enter your email address.');
+    event.preventDefault();
+  }
+});
+
+</script>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Nth Largest Element in an Array</title>
+  </head>
+  <style>
+  
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #fff;
+        text-align:center;
+        text-size-adjust: medium;
+      }
+
+      h1 {
+        text-align: center;
+        color: #fff;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      li {
+        margin-bottom: 5px;
+      }
+
+      label {
+        display: block;
+        margin-top: 10px;
+        color: azure;
+      }
+
+      input[type="number"] {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+        font-size: 16px;
+      }
+
+      button {
+        display: block;
+        margin-top: 10px;
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #3e8e41;
+      }
+
+      #result {
+        font-size: 18px;
+        font-weight: bold;
+        margin-top: 10px;
+      }
+      body{
+       background-position: center;
+       background-repeat: no-repeat;
+       background-size: cover;
+     background-image: url('https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMTg5ZDZjZmQ4MWNmYjYyNWQ5ZTQ1Njg4ZjUzZjY4MmI4NmU0ZDRjNCZjdD1n/W6Lwg2xvTr6tJpuSTd/giphy.gif');
+      }
+    </style>
+  </style>
+  <body>
+    <h1>Nth Largest Element in an Array</h1>
+
+    <p>Array:</p>
+    <ul id="array"></ul>
+
+    <p>N:</p>
+    <input type="number" id="n" value="2" min="1" max="100">
+
+    <p>Nth Largest Element:</p>
+    <p id="result"></p>
+
+    <button onclick="findNthLargest()">Find Nth Largest Element</button>
+
+    <script>
+      const array = [3, 7, 1, 9, 2, 6, 8, 5, 4];
+
+      const arrayElement = document.getElementById("array");
+      for (let number of array) {
+        const li = document.createElement("li");
+        li.textContent = number;
+        arrayElement.appendChild(li);
+      }
+
+      function findNthLargest() {
+        const n = parseInt(document.getElementById("n").value);
+        const sortedArray = array.slice().sort((a, b) => b - a);
+        const nthLargest = sortedArray[n - 1];
+        const resultElement = document.getElementById("result");
+        resultElement.textContent = nthLargest;
+      }
+    </script>
+  </body>
+</html>

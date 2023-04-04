@@ -1,0 +1,28 @@
+<!-- 9. Write a JavaScript program to calculate days left until next Christmas. -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Days until Christmas</title>
+    <script>
+      function daysUntilChristmas() {
+        const today = new Date();
+        const christmas = new Date(today.getFullYear(), 11, 25);
+
+        if (today.getMonth() == 11 && today.getDate() > 25) {
+          christmas.setFullYear(christmas.getFullYear() + 1);
+        }
+
+        const oneDay = 1000 * 60 * 60 * 24;
+        const daysLeft = Math.ceil((christmas.getTime() - today.getTime()) / oneDay);
+
+        document.getElementById('result').textContent = 'There are ' + daysLeft + ' days left until Christmas';
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Days until Christmas</h1>
+    <button onclick="daysUntilChristmas()">Calculate days</button>
+    <p id="result"></p>
+  </body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Binary Search Algorithm</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      input[type="number"] {
+        width: 50px;
+        text-align: center;
+      }
+      button {
+        padding: 10px;
+        margin-top: 10px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #3e8e41;
+      }
+      #result {
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Binary Search Algorithm</h1>
+
+    <p>Array:</p>
+    <ul id="array"></ul>
+
+    <p>Number to Search:</p>
+    <input type="number" id="numberToSearch" value="5" min="1" max="100">
+
+    <button onclick="binarySearch()">Search</button>
+
+    <p id="result"></p>
+
+    <script>
+      const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+      const arrayElement = document.getElementById("array");
+      for (let number of array) {
+        const li = document.createElement("li");
+        li.textContent = number;
+        arrayElement.appendChild(li);
+      }
+
+      function binarySearch() {
+        const numberToSearch = parseInt(document.getElementById("numberToSearch").value);
+        let startIndex = 0;
+        let endIndex = array.length - 1;
+        let middleIndex;
+        while (startIndex <= endIndex) {
+          middleIndex = Math.floor((startIndex + endIndex) / 2);
+          if (array[middleIndex] === numberToSearch) {
+            document.getElementById("result").textContent = `${numberToSearch} found at index ${middleIndex}.`;
+            return;
+          } else if (array[middleIndex] < numberToSearch) {
+            startIndex = middleIndex + 1;
+          } else {
+            endIndex = middleIndex - 1;
+          }
+        }
+        document.getElementById("result").textContent = `${numberToSearch} not found.`;
+      }
+    </script>
+  </body>
+</html>

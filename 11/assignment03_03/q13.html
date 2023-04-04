@@ -1,0 +1,37 @@
+<!-- 13. Use CSS to style the "selected" class with a background color
+of yellow. -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .selected {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h1>My List</h1>
+    <ul id="myList">
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>Pine Apple</li>
+    </ul>
+    
+    <script>
+        const myList = document.getElementById("myList");
+        const listItems = myList.getElementsByTagName("li");
+        
+        myList.addEventListener("click", function(event) {
+            const target = event.target;
+            if (target.tagName === "LI") {
+                for (let i = 0; i < listItems.length; i++) {
+                    listItems[i].classList.remove("selected");
+                }
+                target.classList.add("selected");
+            }
+        });
+    </script>
+</body>
+</html>

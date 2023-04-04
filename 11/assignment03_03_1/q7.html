@@ -1,0 +1,134 @@
+
+<!DOCTYPE >
+    <html>
+<head>
+    <title>Calculator</title>
+</head>
+<style>
+    .calculator {
+        width: 450px;
+        background-color: #f6c6c6;
+        border: 3px solid #ae9999;
+        padding: 20px;
+        box-shadow: 0 0 20px #daa5a5;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    input[type=text] {
+        width: 100%;
+        height: 50px;
+        margin-bottom: 0px;
+        padding: 10px;
+        font-size: 24px;
+        text-align: right;
+        border: 1px solid #c5a5a5;
+        border-radius: 5px;
+        box-shadow: inset 0 0 10px #ccc;
+        background-color: #e9dada;
+    }
+
+    button {
+        width: 100px;
+        height: 60px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        font-size: 24px;
+        border: none;
+        border-radius: 5px;
+        background-color: #c7a3a3;
+        box-shadow: 0 0 5px #a09999;
+        cursor: pointer;
+    }
+
+    .operator {
+        background-color: #b38989;
+    }
+
+    .button-row {
+        display: flex;
+        justify-content: center ;
+    }
+    
+</style>
+
+<body>
+  <div class="table">
+    <div class="calculator">
+        <input type="text" id="result" placeholder="100" disabled>
+        <div class="button-row"></div>
+        <button class="operator" onclick="clearResult()">C</button>
+        <button class="operator" onclick="backspace()">CE</button>
+        <button class="operator" onclick="operate('%')">%</button>
+        <button class="operator" onclick="operate('/')">/</button>
+    </div>
+    <div class="button-row">
+        <button onclick="appendToResult('7')">7</button>
+        <button onclick="appendToResult('8')">8</button>
+        <button onclick="appendToResult('9')">9</button>
+        <button class="operator" onclick="operate('*')">*</button>
+    </div>
+    <div class="button-row">
+        <button onclick="appendToResult('6')">6</button>
+        <button onclick="appendToResult('5')">5</button>
+        <button onclick="appendToResult('4')">4</button>
+        <button class="operator" onclick="operate('-')">-</button>
+    </div>
+    <div class="button-row">
+        <button onclick="appendToResult('3')">3</button>
+        <button onclick="appendToResult('2')">2</button>
+        <button onclick="appendToResult('1')">1</button>
+        <button class="operator" onclick="operate('+')">+</button>
+    </div>
+    <div class="button-row">
+        <button onclick="appendToResult('0')">0</button>
+        <button onclick="appendToResult('.')">.</button>
+        <button class="operator" onclick="calculateResult()">=</button>
+    </div>
+  </div>
+    <script>
+    let result = '';
+
+function appendToResult(value) {
+  result += value;
+  document.getElementById('result').value = result;
+}
+
+function clearResult() {
+  result = '';
+  document.getElementById('result').value = '0';
+}
+
+function backspace() {
+  result = result.slice(0, -1);
+  document.getElementById('result').value = result || '0';
+}
+
+function operate(operator) {
+  const lastChar = result.slice(-1);
+  if (lastChar === operator) return;
+  if (/[+*/%-]/.test(lastChar)) {
+    result = result.slice(0, -1) + operator;
+  } else {
+    result += operator;
+  }
+  document.getElementById('result').value = result;
+}
+
+function calculateResult() {
+  try {
+    const resultValue = eval(result);
+    result = resultValue.toString();
+    document.getElementById('result').value = result;
+  } catch (error) {
+    result = '';
+    document.getElementById('result').value = 'Error';
+  }
+}
+
+
+</script>
+</body>
+
+
+</html>

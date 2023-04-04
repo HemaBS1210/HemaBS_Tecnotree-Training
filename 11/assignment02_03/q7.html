@@ -1,0 +1,28 @@
+<!-- 7. Write a JavaScript program to find 1st January is being a Sunday
+between 2014 and 2050. -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>1st January as Sunday Finder</title>
+    <script>
+      function findSundays() {
+        const resultList = document.getElementById('resultList');
+        resultList.innerHTML = '';
+
+        for (let year = 2014; year <= 2050; year++) {
+          const date = new Date(year, 0, 1);
+          if (date.getDay() === 0) {
+            const listItem = document.createElement('li');
+            listItem.textContent = '1st January ' + year + ' is a Sunday';
+            resultList.appendChild(listItem);
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1>1st January as Sunday Finder</h1>
+    <button onclick="findSundays()">Find years where 1st January is a Sunday</button>
+    <ul id="resultList"></ul>
+  </body>
+</html>
