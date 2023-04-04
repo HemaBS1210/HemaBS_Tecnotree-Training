@@ -1,13 +1,608 @@
-body {
+/* body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: bisque;
+  text-align: center;
+  display: flex ; justify-content: center;
+
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+h1{
+  text-align: center;
+  border: 50px; 
+  padding: 20px;
+
+
+  background-color: rgb(193, 141, 77);
+}
+button{
+  background-color: rgb(229, 229, 140);
+  margin: 20px;
+} */
+
+
+/* 1st question */
+/* body{
+ 
+  padding: 20px;
+  margin: 50px;
+  background-image: url("C:\Users\shekahe\Downloads\200w.webp");
+  background-repeat: no-repeat;
+  background-size: 100% ;
+  margin:auto;
+  width:40% ;
+}
+
+h1{
+  color: #9d2828;
+  text-align: center;
+}
+.countdown-timer {
+  text-align: center;
+}
+
+.timer {
+  font-size: 3rem;
+  margin: 2rem 0;
+}
+.form{
+  max-width : 400px;
+  margin : 0 auto;
+  padding: 20px;
+  background-color: bisque;
+  border-radius: 20px;
+  box-shadow: navy;
+  display: inline-block;
+  border: solid black;
+} */
+
+ /* .countdown-timer {
+  background-color: rgb(170, 236, 245);
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  margin:auto;
+  width:50%;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+.timer {
+  font-size: 2rem;
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-weight: bold;
+}
+
+.start-button {
+  font-size: 1.2rem;
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
+
+.reset-button {
+  font-size: 1.2rem;
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
+body{
+   background-image: url("C:\Users\shekahe\Downloads\200w.webp"); 
+  text-align: center;
+ 
+} 
+.loader {
+  font-size: 24px;
+  font-weight: bold;
+  color: gray;
+  text-align: center;
+}
+
+.error {
+  font-size: 24px;
+  font-weight: bold;
+  color: red;
+  text-align: center;
+}
+
+.data {
+  margin: 20px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  margin-bottom: 5px;
+  padding: 10px;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+} */
+
+
+
+  /* tribute page
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px;
+ 
+   background-size: cover;
+  background-position: center; 
+ } 
+
+.title {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+p{
+  font-size: 20px;
+  color: rgb(0, 0, 0);
+}
+
+.image {
+  width: 50%;
+  margin-bottom: 20px;
+  margin: auto;
+  text-align: center;
+
+}
+
+.bio {
+  font-size: 24px;
+  line-height: 1.5;
+}
+body{
+   background-image: url('https://media.tenor.com/twhLs21u8kMAAAAM/flower.gif'); 
+   background-position: center;
+   background-size:cover;
+   /* background-color:rgba(248, 80, 33, 0.831) */
+  
+
+/* Countdowntimer */
+/*
+  
+ /* body{
+  background-image: url('https://media.tenor.com/adNy2LB2V9cAAAAM/to-do-list-check-list.gif');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+ }
+ .todo-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 30px;
+  border: 10px solid #575050;
+  border-radius: 50px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url('https://www.shutterstock.com/image-photo/writers-table-flat-lay-composition-260nw-1017732259.jpg');
+  box-shadow: 0 3px 6px rgba(125, 121, 121, 0.1);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 36px;
+}
+
+.add-task-container {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.add-task-input {
+  flex-grow: 1;
+  border: none;
+  background-color: #b4b40949;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px 0 0 5px;
+}
+
+.add-task-button {
+  border: none;
+  background-color: #edf10e;
+  color: #000000;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+
+.task-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #f79696a2;
+  border-radius: 5px;
+}
+
+.complete-task-checkbox {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.task-title {
+  flex-grow: 1;
+  font-size: 16px;
+}
+
+.delete-task-button {
+  border: none;
+  background-color: #e66515c3;
+  color: #ffffff;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}  */
+
+/* .delete-task-button {
+  border: none;
+  background-color: #e66515c3;
+  color: #d5d4d4;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: right
+} 
+.todo-list-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 30px;
+  border: 10px solid #575050;
+  border-radius: 50px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url('https://www.shutterstock.com/image-photo/writers-table-flat-lay-composition-260nw-1017732259.jpg');
+} */
+/*
+.add-task-container {
+  margin-bottom: 10px;
+  display:flex;
+}*/
+
+/* .task-list {
+  list-style: none;
+  padding: 0;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #f79696a2;
+  border-radius: 5px;
+  display: flex;
+}
+
+.task-item.completed {
+  opacity: 0.6;
+  text-decoration: line-through;
+  display: flex;
+}
+
+.task-item input[type="checkbox"] {
+  margin-right: 10px;
+}
+body{
+  background-image: url('https://media.tenor.com/adNy2LB2V9cAAAAM/to-do-list-check-list.gif');
+  background-position: center;
+ } */
+
+/* 
+ body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-image: url('https://i.pinimg.com/originals/a5/35/60/a53560c8088900e266880f779dacced7.gif');
+  background-position :center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+}
+
+h1, h2, h3 {
+  margin: 0;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+main {
+  padding: 20px;
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+about-container {
+  display: flex;
+  align-items: left;
+  justify-content: left;
+}
+
+about-container img {
+  max-width: 100%;
+  height: auto;
+  margin-right: 1em;
+}
+form label, form textarea {
+  display: block;
+  margin-bottom: 10px;
+}
+
+form input, form textarea {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 20px;
+} */
+
+/* recipe  */
+/* .App {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.search-form {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.search-bar {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  border: solid black;
+  border-radius: 4px 0 0 4px;
+  box-shadow:#3e8e41;
+}
+body{
+  background-position: center;
+  background-repeat: repeat;
+  
+  background-image: url('https://i.pinimg.com/originals/ef/69/cd/ef69cd230963b34100b23f7fdf5c47eb.gif');
+}
+.search-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: solid black;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: #3e8e41;
+}
+
+.recipe {
+  background-color: #f8f8f8;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.recipe img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+.recipe h2 {
+  margin-top: 0;
+}
+
+.recipe ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.recipe ul li {
+  margin-bottom: 10px;
+} */
+ 
+
+
+/* 
+ 
+
+.App {
+  display: flex;
+  flex-direction: row;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.left-section {
+  flex: 1;
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-right: 1px solid #ccc;
+}
+
+.title {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 32px;
+}
+
+.topics-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.topics-list li {
+  cursor: pointer;
+  padding: 10px 0;
+}
+
+.selected-topic {
+  background-color: #ddd;
+}
+
+.right-section {
+  flex: 3;
+  padding: 20px;
+}
+
+.topic-title {
+  margin-top: 0;
+  font-size: 24px;
+}
+
+.topic-content {
+  font-size: 18px;
+  line-height: 1.5;
+}
+body{
+ background-image: url('https://cdn.dribbble.com/users/2181491/screenshots/4338667/ezgif.com-optimize__1_.gif');
+} */
+
+
+/* styles.css */
+/* 
+
+nav {
+  background-color: #3496b4;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav li {
+  margin-right: 1rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+.home {
+  /* background-color: #f7f7f7; */
+  /* padding: 2rem;
+  text-align: center;
+}
+
+.about {
+  background-color: #f0f0f0;
+  padding: 2rem;
+  text-align: center;
+}
+
+.donate {
+  background-color: #f7f7f7;
+  padding: 2rem;
+  text-align: center;
+}
+
+form {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+input {
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  background-color: #2d9fa7;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #042039;
+} */
+   
