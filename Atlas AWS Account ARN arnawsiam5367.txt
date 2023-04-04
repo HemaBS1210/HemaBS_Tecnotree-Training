@@ -1,0 +1,141 @@
+entites:
+1.post
+2.user
+3.play list 
+4.Album
+5.Artist
+
+
+
+{
+  "post": {
+    "title": String,
+    "content": String,
+    "author": String,
+    "date": Date,
+    "tags": [String],
+    "comments": [
+      {
+        "author": String,
+        "content": String,
+        "date": Date
+      }
+    ],
+    "likes": Number,
+    "image": String,
+    "audio": String,
+    "video": String
+  },
+  
+  "user": {
+    "username": String,
+    "email": String,
+    "password": String,
+    "bio": String,
+    "avatar": String,
+    "following": [String],
+    "followers": [String]
+  },
+  
+  "playlist": {
+    "title": String,
+    "description": String,
+    "author": String,
+    "date": Date,
+    "tracks": [
+      {
+        "title": String,
+        "artist": String,
+        "album": String,
+        "length": Number,
+        "url": String
+      }
+    ],
+    "likes": Number,
+    "image": String
+  },
+  
+  "album": {
+    "title": String,
+    "artist": String,
+    "genre": [String],
+    "releaseDate": Date,
+    "tracks": [
+      {
+        "title": String,
+        "length": Number,
+        "url": String
+      }
+    ],
+    "likes": Number,
+    "image": String
+  },
+  
+  "artist": {
+    "name": String,
+    "bio": String,
+    "albums": [String],
+    "genres": [String],
+    "image": String
+  }
+}
+
+            
++---------+           +---------+           
+|  Post   |-----1:n--<| Comment |                        
++---------+           +---------+                        
+| title   |           | author  |                        
+| content |           | content |                       
+| author  |           | date    |                        
+| date    |           +---------+                      
+| tags    |                                 +-------------+            
+| likes   |---------------1:n-------------->|   Playlist  |
+| image   |                                 +-------------+             
+| audio   |                                 | title       |
+| video   |                                 | description |
++---------+                                 | author      |
+    |                                       | date        |
+    |                                       | tracks      |
+   \/	                                      | likes       |
++---------+                                 | image       |
+|  User   |                                 +-------------+
++---------+                                
+| username|                                 
+| email   |                                
+| password|                                           
+| bio     |                                 
+| avatar  |                                 
+|following|                                
+|followers|                                
++---------+ 
+     |
+     |
+     \/                               
++---------+                                                                         
+| Artist  |                                
++---------+                                
+| name    |                                 
+| bio     |                                 
+| albums  |                                
+| genres  |                                 
+| image   |
++---------+
+     |
+     |
+     \/
++---------+
+|  Album  |
++---------+
+| title   |
+| artist  |
+| genre   |
+| releaseDate|
+| tracks  |
+| likes   |
+| image   |
++---------+
+
+
+
+
+

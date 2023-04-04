@@ -1,0 +1,24 @@
+QL Code:
+        -- -----------------------------------------------------
+        -- Table `demo_tranning`.`order`
+        -- -----------------------------------------------------
+        CREATE TABLE IF NOT EXISTS `demo_tranning`.`order` (
+          `order_id` INT NOT NULL,
+          `order_name` VARCHAR(45) NULL,
+          `order_tpye` VARCHAR(45) NULL,
+          `` VARCHAR(45) NULL,
+          `customer_customer_id` INT NOT NULL,
+          `customer_customer_phone` VARCHAR(45) NOT NULL,
+          PRIMARY KEY (`order_id`, `customer_customer_id`, `customer_customer_phone`),
+          INDEX `fk_order_customer1_idx` (`customer_customer_id` ASC, `customer_customer_phone` ASC) VISIBLE,
+          CONSTRAINT `fk_order_customer1`
+            FOREIGN KEY (`customer_customer_id` , `customer_customer_phone`)
+            REFERENCES `demo_tranning`.`customer` (`customer_id` , `customer_phone`)
+            ON DELETE NO ACTION
+            ON UPDATE NO ACTION)
+        ENGINE = InnoDB
+
+SQL script execution finished: statements: 6 succeeded, 1 failed
+
+Fetching back view definitions in final form.
+Nothing to fetch
