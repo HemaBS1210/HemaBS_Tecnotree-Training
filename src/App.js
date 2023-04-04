@@ -1,13 +1,46 @@
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
-import React from 'react';
-import CountdownTimer from './Components/CountdownTimer';
+function BookList() {
+  const [books, setBooks] = useState([]);
 
-function App() {
+  useEffect(() => {
+    axios.get('/api/books')
+      .then(response => {
+        setBooks(response.data);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }, []);
+
   return (
     <div>
-      <h1>My Countdown App</h1>
-      <CountdownTimer initialSeconds={60} />
+      <h2>Books in the Library</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Publisher</th>
+            <th>Publication Date</th>
+            <th>Quantity</th>
+          </tr>
+        </thead>
+        <tbody>
+          {books.map(book => (
+            <tr key={book.book_id}>
+              <td>{book.title}</td>
+              <td>{book.author_name}</td>
+              <td>{book.publisher}</td>
+              <td>{book.publish_date}</td>
+              <td>{book.quantity}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 }
-export default App;
+
+export default BookList;
