@@ -1,0 +1,146 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Login Page</title>
+  <style>
+    /* style.css */
+    /* add some basic styles to the page */
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 500px;
+      margin: auto;
+      padding: 20px;
+      background-image: url("data:image/jpeg;base64,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");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 8px 16px;
+      background-color: rgb(128, 64, 0);
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    input.error {
+      border-color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Login Page</h1>
+  <form name="loginform">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username">
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password">
+
+    <button type="submit" id="login-btn" disabled>Login</button>
+  </form>
+
+  <a href="./reset-password.html" id="forgot-password-link">Forgot password?</a>
+
+  <script>
+    const form = document.querySelector('form');
+    const usernameInput = document.querySelector('#username');
+    const passwordInput = document.querySelector('#password');
+    const loginButton = document.querySelector('#login-btn');
+    const forgotPasswordLink = document.querySelector('#forgot-password-link');
+
+    function updateLoginButton() {
+      if (usernameInput.value.trim() !== '' && passwordInput.value.trim() !== '') {
+        loginButton.disabled = false;
+      } else {
+        loginButton.disabled = true;
+      }
+    }
+
+    function validateUsername() {
+      const username = usernameInput.value.trim();
+
+      if (username === '') {
+        alert('Please enter a username.');
+        usernameInput.focus();
+        return false;
+      }
+
+      // perform username validation here
+
+      return true;
+    }
+
+    function validatePassword() {
+      const password = passwordInput.value.trim();
+
+      if (password === '') {
+        alert('Please enter a password.');
+        passwordInput.focus();
+        return false;
+      }
+
+      if (password.length < 8) {
+        alert('Password must be at least 8 characters long.');
+        passwordInput.focus();
+        return false;
+      }
+
+      // perform password validation here
+
+      return true;
+    }
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      if (!validateUsername() || !validatePassword()) {
+        return;
+      }
+
+      // perform login validation here
+
+      const username = usernameInput.value.trim();
+      alert(`Welcome, ${username}!`);
+    });
+
+    forgotPasswordLink.addEventListener('click', (event) => {
+      event.preventDefault();
+
+      // take the user to the password reset page
+      window.location.href = './reset-password.html';
+    });
+
+    usernameInput.addEventListener('input', updateLoginButton);
+    passwordInput.addEventListener('input', updateLoginButton);
+
+
+  </script>
+
+</body>
+
+</html>
