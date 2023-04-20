@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Simple Interest Calculator</title>
+</head>
+<body>
+	<h1>Simple Interest Calculator</h1>
+	<form>
+		<label for="principal">Principal Amount:</label>
+		<input type="number" id="principal" name="principal" required><br>
+
+		<label for="rate">Interest Rate (% per year):</label>
+		<input type="number" id="rate" name="rate" required><br>
+
+		<label for="time">Time Period (in years):</label>
+		<input type="number" id="time" name="time" required><br>
+
+		<button type="button" onclick="calculateSimpleInterest()">Calculate</button><br>
+
+		<label for="interest">Total Interest:</label>
+		<input type="text" id="interest" name="interest" readonly><br>
+	</form>
+
+	<script>
+		function calculateSimpleInterest() {
+			var principal = document.getElementById("principal").value;
+			var rate = document.getElementById("rate").value;
+			var time = document.getElementById("time").value;
+
+			var interest = (principal * rate * time) / 100;
+			document.getElementById("interest").value = interest.toFixed(2);
+		}
+	</script>
+    <style>
+        
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f2f2f2;
+		}
+
+		h1 {
+			text-align: center;
+			color: #000000;
+		}
+
+		form {
+			max-width: 500px;
+			margin: 0 auto;
+			padding: 20px;
+			background-color: #fff;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+			border-radius: 5px;
+		}
+
+		label {
+			display: inline-block;
+			margin-bottom: 10px;
+		}
+
+		input[type="number"],
+		input[type="text"] {
+			padding: 5px;
+			border: 1px solid #ccc;
+			border-radius: 3px;
+			font-size: 16px;
+			width: 100%;
+			box-sizing: border-box;
+			margin-bottom: 20px;
+		}
+
+		button[type="button"] {
+			background-color: #000000;
+			color: #fff;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 3px;
+			cursor: pointer;
+			font-size: 16px;
+			transition: background-color 0.3s;
+		}
+
+		button[type="button"]:hover {
+			background-color: #000000;
+		}
+    </style>
+</body>
+</html>

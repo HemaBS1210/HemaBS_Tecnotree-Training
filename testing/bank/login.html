@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login - Banking System</title>
+</head>
+
+<body>
+    <div class="login-container">
+        <h1>Login to your account</h1>
+        <form id="login-form" onsubmit="return login()">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">Login</button>
+
+        </form>
+        <div id="login-error" class="error"></div>
+        <button class="account" onclick="window.location.href='signup.html'">Don't have an account?</button>
+    </div>
+
+</body>
+
+</html>
+
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    .account {
+        background-color: #4b5858;
+        border: none;
+        border-radius: 3px;
+        color: #fff;
+        cursor: pointer;
+        font-size: 16px;
+        padding: 10px;
+        transition: background-color 0.2s;
+        width: 50%;
+        margin-top: 20px;
+    }
+
+    .account:hover {
+        background-color: #392d2d;
+    }
+
+    body {
+        background-image: url("https://images.pexels.com/photos/259209/pexels-photo-259209.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100vh;
+    }
+
+    .login-container {
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        margin: 100px auto;
+        max-width: 400px;
+        padding: 40px;
+        text-align: center;
+    }
+
+    .login-container h1 {
+        margin-bottom: 30px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+        text-align: left;
+    }
+
+    .form-group label {
+        display: block;
+        font-size: 14px;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .form-group input {
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        font-size: 16px;
+        padding: 10px;
+        width: 100%;
+    }
+
+    button[type="submit"] {
+        background-color: #030404;
+        border: none;
+        border-radius: 3px;
+        color: #fff;
+        cursor: pointer;
+        font-size: 16px;
+        padding: 10px;
+        transition: background-color 0.2s;
+        width: 100%;
+    }
+
+    button[type="submit"]:hover {
+        background-color: #392d2d;
+    }
+
+    .error {
+        color: #ff0000;
+        font-size: 14px;
+        margin-top: 20px;
+    }
+</style>
+
+<script>
+   function login() {
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+
+    if (username === "hema" && password === "123") {
+        window.location.href = "dashboard.html"; // Redirect to home page
+        return false;
+    }
+     //else {
+    //     var loginError = document.getElementById("login-error");
+    //     loginError.innerHTML = "Invalid username or password. Please try again.";
+    //     window.location.href = "home.html"; // Redirect to home page
+    //     return false;
+    // }
+}
+
+
+</script>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Transfer Funds</title>
+  </head>
+  <body>
+    <h1>Transfer Funds</h1>
+    
+    <form id="transfer-form" onsubmit="return transfer()">
+      <label class="text1" for="sender-account-number">Sender Account Number:</label>
+      <input type="text" id="sender-account-number" name="sender-account-number" required>
+      <br>
+      <label class="text1"  for="receiver-account-number">Receiver Account Number:</label>
+      <input type="text" id="receiver-account-number" name="receiver-account-number" required>
+      <br>
+      <label class="text1"  for="amount">Amount:</label>
+      <input type="number" id="amount" name="amount" min="0" step="0.01" required>
+      <br>
+      <button type="submit">Transfer</button>
+    </form>
+    
+    <div id="transfer-success" class="success-message"></div>
+    <div id="transfer-error" class="error-message"></div>
+    
+    <script>
+      function transfer() {
+        var senderAccountNumber = document.getElementById("sender-account-number").value;
+        var receiverAccountNumber = document.getElementById("receiver-account-number").value;
+        var amount = parseFloat(document.getElementById("amount").value);
+        
+        // Perform validation on account numbers and amount
+        if (isNaN(amount) || amount <= 0) {
+          var transferError = document.getElementById("transfer-error");
+          transferError.innerHTML = "Please enter a valid amount to transfer.";
+          return false;
+        }
+        
+        // Call API to transfer funds from sender to receiver accounts
+        // Replace with actual API call
+        var response = {
+          success: true,
+          senderBalance: 1000,
+          receiverBalance: 2500
+        };
+
+        // Get balance elements in dashboard page
+        var senderBalanceEl = window.opener.document.getElementById("sender-balance");
+        var receiverBalanceEl = window.opener.document.getElementById("receiver-balance");
+
+        if (response.success) {
+          var transferSuccess = document.getElementById("transfer-success");
+          transferSuccess.innerHTML = "Transfer successful. New sender balance is $" + response.senderBalance.toFixed(2) + " and new receiver balance is $" + response.receiverBalance.toFixed(2);
+
+          // Update balance elements in dashboard page
+          senderBalanceEl.innerHTML = "$" + response.senderBalance.toFixed(2);
+          receiverBalanceEl.innerHTML = "$" + response.receiverBalance.toFixed(2);
+
+          return false;
+        } else {
+          var transferError = document.getElementById("transfer-error");
+          transferError.innerHTML = "There was an error processing your transfer. Please try again later.";
+          return false;
+        }
+      }
+    </script>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        background-image: url("https://images.pexels.com/photos/50987/money-card-business-credit-card-50987.jpeg?auto=compress&cs=tinysrgb&w=400");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .text1{
+        color: #ddd;
+      }
+      h1 {
+        text-align: center;
+        color: #ffffff;
+        margin-top: 50px;
+      }
+      
+      form {
+        background-color:rgba(0,0,0,0.1);
+        border: 1px solid #ddd;
+        padding: 20px;
+        margin: 0 auto;
+        max-width: 400px;
+        box-shadow: 0 0 10px #ddd;
+      }
+      
+      label {
+        display: block;
+        margin-bottom: 10px;
+        color: #333;
+      }
+      
+      input[type="text"],
+      input[type="number"] {
+        padding: 10px;
+        width: 100%;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-bottom: 20px;
+      }
+      
+      button[type="submit"] {
+        background-color: #4cafaf;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      
+      .success-message {
+        background-color: #d4edda;
+        border-color: #c3e6cb;
+        color: #155724;
+        padding: 10px;
+        margin-top: 20px;
+      }
+      
+      .error-message {
+        background-color: #f8d7da;
+        border-color: #f5c6cb;
+        color: #721c24;
+        padding: 10px;
+        margin-top: 20px;
+      }
+    
+     </style>
+     </body>
+     </html>
+      

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Deposit Funds</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            background-position: center;
+            background-image: url("https://images.pexels.com/photos/6289064/pexels-photo-6289064.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+        }
+
+        h1 {
+            text-align: center;
+            color: #222;
+            border-bottom: 2px solid #222;
+            padding-bottom: 10px;
+            margin-top: 40px;
+        }
+
+        button[type="submit"] {
+            background-color: #c46ceaad;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            /* existing styles */
+            display: block;
+            margin: 0 auto;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #000000;
+        }
+
+
+        form {
+            margin: 0 auto;
+            width: 80%;
+            max-width: 400px;
+            border: 1px solid #ddd;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #222;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-size: 16px;
+            color: #555;
+        }
+
+        input[type="submit"] {
+            background-color: #4285F4;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #357AE8;
+        }
+
+        .success-message {
+            color: green;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .error-message {
+            color: red;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        a {
+            color: #4285F4;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Deposit Funds</h1>
+
+    <form id="deposit-form" action="deposit">
+        <label for="account-number">Account Number:</label>
+        <input type="text" id="account-number" name="account-number" required>
+        <br>
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" name="amount" min="0" step="0.01" required>
+        <br>
+        <button type="submit">Deposit</button>
+    </form>
+
+    <div id="deposit-success" class="success-message"></div>
+    <div id="deposit-error" class="error-message"></div>
+
+    <script>
+        function deposit() {
+            var accountNumber = document.getElementById("account-number").value;
+            var amount = parseFloat(document.getElementById("amount").value);
+
+            // Perform validation on account number and amount
+            if (isNaN(amount) || amount <= 0) {
+                var depositError = document.getElementById("deposit-error");
+                depositError.innerHTML = "Please enter a valid amount to deposit.";
+                return false;
+            }
+
+            // Call API to deposit funds into account
+            // Replace with actual API call
+            var response = {
+                success: true,
+                balance: 5000
+            };
+
+            var balanceEl = window.opener.document.getElementById("balance");
+
+            if (response.success) {
+                var depositSuccess = document.getElementById("deposit-success");
+                depositSuccess.innerHTML = "Deposit successful. New balance is $" + response.balance.toFixed(2);
+                balanceEl.innerHTML = "$" + response.balance.toFixed(2);
+
+                return false;
+            } else {
+                var depositError = document.getElementById("deposit-error");
+                depositError.innerHTML = "There was an error processing your deposit. Please try again later.";
+                return false;
+            }
+        }
+        function deposit() {
+            var accountNumber = document.getElementById("account-number").value;
+            var amount = parseFloat(document.getElementById("amount").value);
+
+            // Perform validation on account number and amount
+            if (isNaN(amount) || amount <= 0) {
+                var depositError = document.getElementById("deposit-error");
+                depositError.innerHTML = "Please enter a valid amount to deposit.";
+                return false;
+            }
+
+            // Call API to deposit funds into account
+            // Replace with actual API call
+            var response = {
+                success: true,
+                balance: 5000
+            };
+
+            // Get balance element in dashboard page
+            var balanceEl = window.opener.document.getElementById("balance");
+
+            if (response.success) {
+                var depositSuccess = document.getElementById("deposit-success");
+                depositSuccess.innerHTML = "Deposit successful. New balance is $" + response.balance.toFixed(2);
+
+                // Update balance element in dashboard page
+                balanceEl.innerHTML = "$" + response.balance.toFixed(2);
+
+                return false;
+            } else {
+                var depositError = document.getElementById("deposit-error");
+                depositError.innerHTML = "There was an error processing your deposit. Please try again later.";
+                return false;
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

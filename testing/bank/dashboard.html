@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to Your Dashboard</h1>
+    </header>
+    <main>
+
+        <button id="deposit-button">Deposit Funds</button>
+        <br>
+        <button id="Withdraw-button">Withdraw Funds</button>
+        <br>
+        <button id="transfer-button">Transfer Funds</button>
+        <br>
+        <button id="close-button">close Funds</button>
+        <br>
+        <button id="statement-button">statement Funds</button>
+        <br>
+        <button id="Overdraft_Protection-button">Overdraft Protection Funds</button>
+        <br>
+        <button id="update-button">Update</button>
+
+    </main>
+    <footer>
+        <button id="logout-button">logout</button>
+    </footer>
+
+</body>
+
+</html>
+
+
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    #logout-button {
+        background-color: #231515;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    footer {
+        /* other styles */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    body {
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+        background-color: #f2f2f2;
+    }
+
+    header {
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+    }
+
+    header h1 {
+        margin: 0;
+    }
+
+    main {
+        padding: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    section {
+        flex-basis: 30%;
+        margin-bottom: 20px;
+    }
+
+    section h2 {
+        margin-bottom: 10px;
+    }
+
+    form label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    form input[type="text"],
+    form input[type="number"] {
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+
+    #deposit-button {
+        background-color: rgb(0, 0, 0);
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-right: 10px;
+    }
+
+    #deposit-button {
+        display: block;
+        margin: 0 auto;
+    }
+
+
+    #deposit-button:hover {
+        background-color: rgb(0, 0, 0);
+    }
+
+    #Overdraft_Protection-button {
+        background-color: rgb(0, 0, 0);
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-right: 10px;
+    }
+
+    #Overdraft_Protection-button {
+        display: block;
+        margin: 0 auto;
+    }
+
+
+    #Overdraft_Protection:hover {
+        background-color: rgb(0, 0, 0);
+    }
+
+
+
+    #Withdraw-button {
+        background-color: rgb(0, 0, 0);
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-right: 10px;
+    }
+
+    #Withdraw-button:hover {
+        background-color: rgb(0, 0, 0);
+    }
+
+    #Withdraw-button {
+        display: block;
+        margin: 0 auto;
+    }
+
+    form button[type="submit"] {
+        background-color: #333;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    #transfer-button {
+        background-color: rgb(0, 0, 0);
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-right: 10px;
+    }
+
+    #transfer-button:hover {
+        background-color: rgb(0, 0, 0);
+    }
+
+    #transfer-button {
+        display: block;
+        margin: 0 auto;
+    }
+
+    #close-button {
+        background-color: rgb(0, 0, 0);
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-right: 10px;
+    }
+
+    #close-button {
+        display: block;
+        margin: 0 auto;
+    }
+
+
+    #close-button:hover {
+        background-color: rgb(0, 0, 0);
+    }
+
+    #statement-button {
+        background-color: rgb(0, 0, 0);
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-right: 10px;
+    }
+
+    #statement-button {
+        display: block;
+        margin: 0 auto;
+    }
+
+
+    #satemenet-button:hover {
+        background-color: rgb(0, 0, 0);
+    }
+
+    #update-button {
+        background-color: rgb(0, 0, 0);
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-right: 10px;
+    }
+
+    #update-button {
+        display: block;
+        margin: 0 auto;
+    }
+
+
+    #update-button:hover {
+        background-color: rgb(0, 0, 0);
+    }
+
+
+    .error-message {
+        color: red;
+        margin-top: 5px;
+    }
+
+    footer {
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+        text-align: right;
+    }
+
+    footer button {
+        background-color: #fff;
+    }
+</style>
+
+<script>
+    const depositButton = document.getElementById('deposit-button');
+
+    depositButton.addEventListener('click', () => {
+        location.assign('deposit.html');
+    });
+
+    const withdrawButton = document.getElementById('Withdraw-button');
+
+    withdrawButton.addEventListener('click', () => {
+        location.assign('withdraw.html');
+    });
+    const updateButton = document.getElementById('update-button');
+
+    updateButton.addEventListener('click', () => {
+        location.assign('update.html');
+    });
+    const logoutButton = document.getElementById('logout-button');
+
+    logoutButton.addEventListener('click', () => {
+        location.assign('login.html');
+    });
+    const transferButton = document.getElementById('transfer-button');
+
+    transferButton.addEventListener('click', () => {
+        location.assign('transfer.html');
+    });
+
+    const closeButton = document.getElementById('close-button');
+
+    closeButton.addEventListener('click', () => {
+        location.assign('close.html');
+    });
+
+    const statementButton = document.getElementById('statement-button');
+
+    statementButton.addEventListener('click', () => {
+        location.assign('statement.html');
+    });
+
+    const Overdraft_ProtectionButton = document.getElementById('Overdraft_Protection-button');
+
+    Overdraft_ProtectionButton.addEventListener('click', () => {
+        location.assign('Overdraft_Protection.html');
+    });
+</script>

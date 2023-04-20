@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>Home</title>
+    <style>
+
+     * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background-color: #333;
+        color: #fff;
+    }
+    
+    nav .logo a {
+        font-size: 24px;
+        font-weight: bold;
+        color: #fff;
+        text-decoration: none;
+    }
+    
+    nav .nav-links {
+        display: flex;
+        justify-content: space-between;
+        list-style: none;
+        width: 50%;
+    }
+    
+    nav .nav-links li a {
+        font-size: 16px;
+        font-weight: bold;
+        color: #fff;
+        text-decoration: none;
+        padding: 10px;
+        transition: background-color 0.5s ease;
+    }
+    
+    nav .nav-links li a:hover {
+        background-color: #fff;
+        color: #333;
+    }
+    
+    nav .burger {
+        display: none;
+    }
+    
+    @media screen and (max-width: 768px) {
+        nav .nav-links {
+            position: fixed;
+            right: 0;
+            height: 100vh;
+            top: 80px;
+            background-color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 50%;
+            transform: translateX(100%);
+            transition: transform 0.5s ease-in;
+        }
+    
+        nav .nav-links li {
+            opacity: 0;
+        }
+    
+        nav .burger {
+            display: block;
+            cursor: pointer;
+        }
+    
+        nav .burger div {
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            margin: 5px;
+            transition: all 0.5s ease;
+        }
+    
+        nav .nav-active {
+            transform: translateX(0);
+        }
+    
+        nav .nav-links li a {
+            color: #fff;
+        }
+    
+        nav .nav-links li a:hover {
+            background-color: #fff;
+            color: #333;
+        }
+    }
+    
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <a href="#">MyBank</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="login.html">Login</a></li>
+            <li><a href="">Signup</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+    <div class="information">
+        <h2>Welcome to our Banking System!</h2>
+        <p>We provide a wide range of banking services to meet your financial needs. Our system is safe, secure, and easy to use. You can access your account information, transfer funds, and pay bills online.</p>
+        <p>If you have any questions or need assistance, please don't hesitate to contact us.</p>
+        </div>
+
+
+
+        <script>
+            // Script for burger menu animation
+            const navSlide = () => {
+                  const burger = document.querySelector('.burger');
+                  const nav = document.querySelector('.nav-links');
+                  const navLinks = document.querySelectorAll('.nav-links li');
+          
+                  burger.addEventListener('click', () => {
+                      nav.classList.toggle('nav-active');
+          
+                      navLinks.forEach((link, index) => {
+                          if (link.style.animation) {
+                              link.style.animation = '';
+                          } else {
+                              link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+                          }
+                      });
+          
+                      burger.classList.toggle('toggle');
+                  });
+              };
+          
+              navSlide();
+          </script>
+</body>
+
+
+</html>

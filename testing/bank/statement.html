@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Statement</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Account Statement</h1>
+    </header>
+
+    <main>
+        <form id="statement-form">
+            <label for="account-number">Account Number:</label>
+            <input type="text" id="account-number" name="account-number" required>
+            <br>
+            <label for="date-range">Date Range:</label>
+            <input type="date" id="start-date" name="start-date" required> to
+            <input type="date" id="end-date" name="end-date" required>
+            <br>
+            <button type="submit">Generate Statement</button>
+        </form>
+
+        <table id="statement-table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Transaction Type</th>
+                    <th>Description</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Bank of Example</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
+<style>
+    /* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+header, main, footer {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+header {
+    background-color: #007bff;
+    color: #fff;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    font-weight: bold;
+}
+
+button[type="submit"] {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Statement Table Styles */
+table {
+    margin-top: 2rem;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding: 0.5rem;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #007bff;
+    color: #fff;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Form Validation Styles */
+input:invalid {
+    border: 1px solid red;
+}
+
+input:valid {
+    border: 1px solid #ddd;
+}
+
+</style>
+<script>
+    // Get form and table elements
+const statementForm = document.getElementById('statement-form');
+const statementTable = document.getElementById('statement-table');
+
+// Listen for form submission
+statementForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    // Get input values
+    const accountNumber = document.getElementById('account-number').value;
+    const startDate = document.getElementById('start-date').value;
+    const endDate = document.getElementById('end-date').value;
+
+    // Validate input values
+    if (!accountNumber || !startDate || !endDate) {
+        alert('Please fill out all required fields.');
+        return;
+    }
+
+    // Make API call to get account statement data
+    fetch(`/api/accounts/${accountNumber}/statement?start=${startDate}&end=${endDate}`)
+        .then(response => response.json())
+        .then(data => {
+            // Clear table body
+            statementTable.getElementsByTagName('tbody')[0].innerHTML = '';
+
+            // Fill table body with transaction data
+            for (const transaction of data.transactions) {
+                const row = statementTable.insertRow();
+                const dateCell = row.insertCell();
+                const typeCell = row.insertCell();
+                const descriptionCell = row.insertCell();
+                const amountCell = row.insertCell();
+
+                dateCell.innerHTML = transaction.date;
+                typeCell.innerHTML = transaction.type;
+                descriptionCell.innerHTML = transaction.description;
+                amountCell.innerHTML = transaction.amount;
+            }
+
+            // Display account balance
+            document.getElementById('account-balance').innerHTML = `Current balance: ${data.balance}`;
+        })
+        .catch(error => {
+            console.error(error);
+            alert('An error occurred while generating the account statement.');
+        });
+});
+
+</script>

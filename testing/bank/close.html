@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Close Account</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Close Account</h1>
+    </header>
+    <main>
+        <form id="close-account-form">
+            <label for="account-number">Account Number:</label>
+            <input type="text" id="account-number" name="account-number" required>
+            <label for="closure-reason">Reason for Closure:</label>
+            <textarea id="closure-reason" name="closure-reason" required></textarea>
+            <button type="submit" id="close-account-button">Close Account</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2023 My Bank</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
+<style>
+    * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: #f2f2f2;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+main {
+    padding: 20px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input[type="text"],
+form textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+form textarea {
+    height: 100px;
+}
+
+form button[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+</style>
+<script>
+    const closeAccountForm = document.getElementById('close-account-form');
+const closeAccountButton = document.getElementById('close-account-button');
+
+closeAccountForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const accountNumber = document.getElementById('account-number').value;
+    const closureReason = document.getElementById('closure-reason').value;
+    // perform validation and send closure request to server
+    // if successful, redirect to confirmation page
+    location.assign('close-account-confirmation.html');
+});
+
+</script>
